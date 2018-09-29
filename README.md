@@ -1,6 +1,6 @@
 # MultimediaTechnology_Experiments
 
-> **Class design** for Junior of SDCS, SYSU. 
+> **Class design** for junior students of SDCS, SYSU. 
 > 
 > **Numerical Computation** Class by Meng Yang, SDCS, SYSU. 
 > 
@@ -9,5 +9,5 @@
 
 ## Introduce
 
-This repo provides implementations of some classic **multimedia tech** problems. 
+This repo provides implementations of some classic **multimedia tech** problems. (To be continued ...)
 
