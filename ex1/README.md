@@ -9,6 +9,8 @@ In this experiment, we are supposed to complete a video transaction. Specificall
 
 ![](https://i.postimg.cc/SQHkxjXZ/Snip20181008_43.png)
 
+*Seriously, this is not a PS problem...*
+
 ### Experiment Procedure
 
 In order to achieve the "camera iris" effect, there are two possible methods:
