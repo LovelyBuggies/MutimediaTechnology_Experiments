@@ -1,4 +1,4 @@
-# MultimediaTechnology_Experiments_1
+[y][x]# MultimediaTechnology_Experiments_1
 
 
 ## Video Transaction
@@ -74,7 +74,7 @@ Core code is listed as following:
 for y in range(centerY-radius, centerY+radius):
     for x in range(centerX-radius, centerX+radius):
         if np.power((x-centerX),2)+np.power((y-centerY),2) < np.power(radius,2):
-            npImage2[x][y] = npImage1[x][y]
+            npImage2[y][x] = npImage1[y][x]
 Image.fromarray(npImage2).save('pics/circleinsertion.png')
 ```
 
@@ -96,7 +96,7 @@ npImage3 = np.array(img3)
 height3, width3 = img3.size
 for y in range(0, height3-1):
     for x in range(0, width3-1):
-            npImage3[x][y] = npImage1[int(3*x/4), int(3*y/4)]
+            npImage3[y][x] = npImage1[int(3*y/4), int(3*x/4)]
 Image.fromarray(npImage3).save('pics/larger.png')
 ```
 
@@ -110,7 +110,7 @@ radius = int(3*radius/2)
 for y in range(centerY-radius, centerY+radius):
     for x in range(centerX-radius, centerX+radius):
         if np.power((x-centerX),2)+np.power((y-centerY),2) < np.power(radius,2):
-            npImage2[x][y] = npImage3[x][y]
+            npImage2[y][x] = npImage3[y][x]
 Image.fromarray(npImage2).save('pics/circleExinsertion.png')
 ```
 
