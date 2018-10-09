@@ -7,7 +7,7 @@
 
 In this experiment, we are supposed to complete a video transaction. Specifically, the second video appears to under the first video through an opening circle, like a camera iris opening. Implementation effect acts as figure below.
 
-![](https://i.postimg.cc/SQHkxjXZ/small/Snip20181008_43.png)
+![](https://i.postimg.cc/SQHkxjXZ/Snip20181008_43.png)
 
 *Seriously, this is not a PS problem...*
 
