@@ -224,9 +224,12 @@ We also use [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [A
 
 This part contains screen-shot of [video on Youtube](https://www.youtube.com/watch?v=LQST9MITKrw).
 
-We can convert an image to a numpy array. The the image can be represented by points in RGB 3-D space. So we can geographically spilt the points into many groups and put the points into buckets. Each bucket has a fixed RGB. The image will become less clear for pixels' RGBs are less more accurate. 
+We can convert an image to a numpy array. The the image can be represented by points in RGB 3-D space. So we can geographically spilt the points into many groups and put the points into buckets. 
 
 ![](https://i.postimg.cc/SsydHjXQ/colorquantization.gif)
+
+Each bucket has a fixed RGB. The image will become less clear for pixels' RGBs are less more accurate. 
+
 
 **Fuzzy Procedure**
 
@@ -271,7 +274,5 @@ See my code [here]().
 * **Fuzzier Procedure:**
 
 ![]()
-
-
 
 

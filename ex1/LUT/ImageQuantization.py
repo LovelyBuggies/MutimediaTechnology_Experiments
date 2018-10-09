@@ -6,6 +6,7 @@ img1 = Image.open("pics/redapple.jpg").convert("RGB")
 npImage1 = np.array(img1)
 width, height = img1.size
 
+# Fuzzier Images
 for n in range(2, 8):
     for x in range(0, int(width-1)):
         for y in range(0, int(height-1)):
