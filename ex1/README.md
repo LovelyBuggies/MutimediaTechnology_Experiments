@@ -226,7 +226,7 @@ This part contains screen-shot of [video on Youtube](https://www.youtube.com/wat
 
 We can convert an image to a numpy array. The the image can be represented by points in RGB 3-D space. So we can geographically spilt the points into many groups and put the points into buckets. 
 
-![](https://i.postimg.cc/SsydHjXQ/colorquantization.gif)
+![](https://i.postimg.cc/yN1bPHHG/buckets.gif)
 
 Each bucket has a fixed RGB. The image will become less clear for pixels' RGBs are less more accurate. 
 
