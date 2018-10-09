@@ -177,6 +177,10 @@ That's why we negate the second plan:
 
 **Because I could not paste an ImageDraw to another image.**
 
+### Implementation
+
+View code on my [repo](https://github.com/LovelyBuggies/MultimediaTechnology_Experiments/tree/master/ex1/VideoTransition).
+
 ### Successful Results
 
 * **Picture in picture:**
