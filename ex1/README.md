@@ -218,7 +218,7 @@ There are two possible way to make images fuzzy:
 
 #### Language and Environment
 
-We also use [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [Anaconda](https://www.anaconda.com/) *video-env* in the VideoTransion problem as our environment.
+We also used [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [Anaconda](https://www.anaconda.com/) *video-env* in the VideoTransion problem as our environment.
 
 #### Algorithm Design 
 
@@ -257,9 +257,9 @@ for n in range(2, 8):
 
 #### Complex OcTree
 
-Actually, I used [OcTree](https://en.wikipedia.org/wiki/Octree) at first. Gradually, after search for some codes on [Github repo](https://github.com/jcummings2/pyoctree), I thought its a painstaking job. Why not just split pixels' RGB scales? 
+Actually, I used [OcTree](https://en.wikipedia.org/wiki/Octree) at first. Gradually, after searching for some codes on [Github repo](https://github.com/jcummings2/pyoctree), I considered its a painstaking job. Why not just split pixels' RGB scales? 
 
-**Fantastic as OcTree is, I think setting RGB intervals comes as a better way.**
+**Fantastic as OcTree is, I think setting RGB intervals seems to be a better way.**
 
 ### Implementation
 
