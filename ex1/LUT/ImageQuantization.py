@@ -7,7 +7,7 @@ npImage1 = np.array(img1)
 width, height = img1.size
 
 # Fuzzier Images
-for n in range(2, 8, 1):
+for n in range(3, 8, 1):
     for x in range(0, int(width-1)):
         for y in range(0, int(height-1)):
             npImage1[y][x] = np.floor(npImage1[y][x] / np.power(2,n)) * np.power(2,n)

@@ -273,6 +273,6 @@ See my code [here](https://github.com/LovelyBuggies/MultimediaTechnology_Experim
 
 * **Fuzzier Procedure GIF:**
 
-![](https://i.postimg.cc/0ysk9bYJ/apple.gif)
+![](https://i.postimg.cc/sx5xs82p/apple.gif)
 
 
