@@ -1,4 +1,4 @@
-[y][x]# MultimediaTechnology_Experiments_1
+# MultimediaTechnology_Experiments_1
 
 
 ## Video Transaction
@@ -13,7 +13,7 @@ In this experiment, we are supposed to complete a video transaction. Specificall
 
 ### Experiment Procedure
 
-In order to achieve the "camera iris" effect, there are two possible methods:
+In order to achieve the "camera iris" effect, there are three possible methods:
 
 - Circle crop an image and paste it to the second one.
 - Try to draw a logo layer on the canvas.
@@ -198,4 +198,36 @@ View code on my [repo](https://github.com/LovelyBuggies/MultimediaTechnology_Exp
 These pictures indicate the success of camera iris experiment!
 
 ## LUT Problem
+
+### Question Description
+
+For the [Color LUT(Lookup Table) problem](https://en.wikipedia.org/wiki/Lookup_table), try out the [median cut algorithm](https://www.cs.tau.ac.il/~dcor/Graphics/cg-slides/color_q.pdf) on a sample image.
+
+### Background Knowledge
+
+[Color quantization](https://en.wikipedia.org/wiki/Color_quantization) reduces the number of colors used in an image; this is important for displaying images on devices that support a limited number of colors and for efficiently compressing certain kinds of images. Most bitmap editors and many operating systems have built-in support for color quantization. Popular modern color quantization algorithms include the nearest color algorithm (for fixed palettes), the [median cut algorithm](https://en.wikipedia.org/wiki/Median_cut), and an algorithm based on OcTrees.
+
+**[A great video on Youtube](https://www.youtube.com/watch?v=LQST9MITKrw) helps me a lot when starting Mid-cut.**
+
+### Experiment Procedure
+
+There are two possible way to make images fuzzy:
+
+- Use OcTree technique.
+- Cut color scales into pieces.
+
+#### Language and Environment
+
+We also use [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [Anaconda](https://www.anaconda.com/) Video as our environment.
+
+#### Algorithm Design 
+
+This part contains screen-shot of [video on Youtube](https://www.youtube.com/watch?v=LQST9MITKrw).
+
+We can convert an image to a numpy array. The the image can be represented by points in RGB 3-D space. So we can geographically spilt the points into many groups and put the points into buckets. Each bucket has a fixed RGB. The image will become less clear for pixels' RGBs are less more accurate. 
+
+![](https://i.postimg.cc/SsydHjXQ/colorquantization.gif)
+
+
+
 
