@@ -218,7 +218,7 @@ There are two possible way to make images fuzzy:
 
 #### Language and Environment
 
-We also use [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [Anaconda](https://www.anaconda.com/) Video as our environment.
+We also use [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [Anaconda](https://www.anaconda.com/) *video-env* in the VideoTransion problem as our environment.
 
 #### Algorithm Design 
 
@@ -263,16 +263,16 @@ Actually, I used [OcTree](https://en.wikipedia.org/wiki/Octree) at first. Gradua
 
 ### Implementation
 
-See my code [here]().
+See my code [here](https://github.com/LovelyBuggies/MultimediaTechnology_Experiments/tree/master/ex1/LUT).
 
 ### Successful Result
 
 * **Vague Apple:**
 
-![]()
+![](https://i.postimg.cc/0NNdCFhr/vagueapple.png)
 
 * **Fuzzier Procedure:**
 
-![]()
+![](https://i.postimg.cc/44wfD00X/fuzzyprogress.gif)
 
 
