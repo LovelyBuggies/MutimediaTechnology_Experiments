@@ -271,7 +271,7 @@ See my code [here](https://github.com/LovelyBuggies/MultimediaTechnology_Experim
 
 ![](https://i.postimg.cc/0NNdCFhr/vagueapple.png)
 
-* **Fuzzier Procedure:**
+* **Fuzzier Procedure GIF:**
 
 ![](https://i.postimg.cc/44wfD00X/fuzzyprogress.gif)
 
