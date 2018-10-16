@@ -1,4 +1,4 @@
-# MultimediaTechnology_Experiments_1
+# Experiments_Report
 
 
 ## Video Transaction
@@ -165,7 +165,7 @@ npImage2 = np.dstack((npImage2, npAlpha2))
 // Save with alpha
 Image.fromarray(npImage1).save('pics/croppedLena.png')
 Image.fromarray(npImage2).save('pics/croppedNobel.png')
-``` 
+```
 
 The image was covered by circle, alluding the dawn of the success, seemingly. No bad, right?
 
