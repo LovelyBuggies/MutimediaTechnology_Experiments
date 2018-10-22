@@ -7,6 +7,6 @@
 > **Author** Nino Lau.
 
 
-## Introduce
+## Introduction
 
 This repo provides implementations of some classic **multimedia tech** problems.
