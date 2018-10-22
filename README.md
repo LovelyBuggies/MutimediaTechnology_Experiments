@@ -9,5 +9,4 @@
 
 ## Introduce
 
-This repo provides implementations of some classic **multimedia tech** problems. (To be continued ...)
-
+This repo provides implementations of some classic **multimedia tech** problems.
