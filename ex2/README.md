@@ -150,3 +150,7 @@ Assume that **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_H
 
 ### JPEG VS GIF
 
+
+
+---
+
