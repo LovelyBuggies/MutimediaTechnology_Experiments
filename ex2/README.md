@@ -152,5 +152,30 @@ Assume that **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_H
 
 
 
+#### Method Chosen
+
+Given a computer cartoon picture and a photograph as follows:
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fwy50ef1h9j30rs0jvacx.jpg)
+
+![](https://ws1.sinaimg.cn/large/006tNbRwgy1fwy50jjc7sj30sg0iywj0.jpg)
+
+[**GIF**](https://en.wikipedia.org/wiki/Gif)s are suitable for **sharp-edged line art** (such as logos) with a limited number of colors. Taking advantage of the format's lossless compression, which favors flat areas of uniform color with well defined edges, **it's intuitive to choose [GIF](https://en.wikipedia.org/wiki/Gif) as a better choice for cartoon picture and [JPEG](https://en.wikipedia.org/wiki/JPEG) for photograph.**
+
+
+
+#### JPEG Implementation
+
+
+
+In this part, I implement a simple JPEG compression algorithm including *Color Conversion, Color Subsampling, 2-D DCT transform, DPCM and Run Length Encoding and Entropy Coding* .
+
+
+
+
+
+
+
+
+
 ---
 
