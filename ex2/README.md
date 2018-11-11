@@ -18,15 +18,15 @@ As **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_co
 
 #### Huffman Coding
 
-> **[Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)** is a lossless data compression algorithm. The idea is to assign variable-length codes to input character, lengths of the assigned codes are based on the frequecies of corresponding characters. The most frequent character gets the small code and the least frequent character gets the largest code.
+> **[Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)** is a lossless data compression algorithm. The idea is to assign variable-length codes to input character, lengths of the assigned codes are based on the frequencies of corresponding characters. The most frequent character gets the small code and the least frequent character gets the largest code.
 
-**[Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)** consists of following steps:
+**[Huffman Coding](https://en.wikipedia.org/wiki/Huffman_coding)** consists of the following steps:
 
-- First, we need to sort each characters by their emerge frequencies. 
+- First, we need to sort each character by their emerge frequencies. 
 
-- Then we are able build Huffman Tree 🌲. A great ***Huffman Tree Construction demo*** is on this website - [YouTube/Huffman Coding - Greedy Algorithm](YouTube/Huffman Coding - Greedy Algorithm) .
+- Then we are able to build Huffman Tree 🌲. A great ***Huffman Tree Construction demo*** is on this website - [YouTube/Huffman Coding - Greedy Algorithm](YouTube/Huffman Coding - Greedy Algorithm).
 
-- After buliding a Huffman Tree, we can simply put characters together according to the compression Table. ⚠️ *Notice that the above **demo** generated a compression table like the following image ⬇️, and no ambiguity would happen.*
+- After building a Huffman Tree, we can simply put characters together according to the compression Table. ⚠️ *Notice that the above **demo** generated a compression table like the following image ⬇️, and no ambiguity would happen.*
 - Finally, we compress the information successfully! ✌️
 
 ![](https://ws2.sinaimg.cn/bmiddle/006tNbRwgy1fwx0borxohj30s811ewgq.jpg)
@@ -35,14 +35,14 @@ As **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_co
 
 #### Adaptive Huffman Coding 
 
->  **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)** (also called **Dynamic Huffman coding**) is an [adaptive coding](https://en.wikipedia.org/wiki/Adaptive_coding) technique based on **[Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding)**. In the **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)** , statistics are gathered and updated dynamically **both in encoder and decoder** , who use the same routine. It permits building the code as the symbols are being transmitted, having no initial knowledge of source distribution, that allows one-pass encoding and adaptation to changing conditions in data. 
+>  **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)** (also called **Dynamic Huffman coding**) is an [adaptive coding](https://en.wikipedia.org/wiki/Adaptive_coding) technique based on **[Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding)**. In the **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)**, statistics are gathered and updated dynamically **both in the encoder and decoder**, who use the same routine. It permits building the code as the symbols are being transmitted, having no initial knowledge of source distribution, that allows one-pass encoding and adaptation to change conditions in data. 
 
-**The rule of  [Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding) algorithm are sophisticated:**
+**The rule of  [Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding) algorithm is sophisticated:**
 
-- Initial code assigns symbols with some initially agreed upon codes, without any prior knowledge of the frequency count.
+- The initial code assigns symbols with some initially agreed upon codes, without any prior knowledge of the frequency count.
 - Then we start to build **Adaptive Huffman Tree**:
-  - Nodes are numbered in order **from left to right, bottom to top**. The numbers in parentheses indicates the count.
-  - The tree must always **maintain its sibling property**, i.e., all nodes (internal and leaf) are arranged in the order of increas- ing counts. 
+  - Nodes are numbered in order **from left to right, bottom to top**. The numbers in parentheses indicate the count.
+  - The tree must always **maintain its sibling property**, i.e., all nodes (internal and leaf) are arranged in the order of increasing counts. 
   - If the sibling property is about to be violated, a **swap procedure** is invoked to update the tree by rearranging the nodes. 
   - When a swap is necessary, the **farthest node with count $N$** is swapped with the node whose count has just been increased to $N + 1$.
 - A special symbol **NEW** will be sent before any letter if it is to be sent the first time, and encoder compresses the corresponding letter.
@@ -67,23 +67,23 @@ And finally generate *the sequence of symbols* like this:
 
 What's the major `advantage` of **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)** compared with  **[Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding)** ?
 
-**The benefit of one-pass procedure is that the source can be encoded in real time, though it becomes more sensitive to transmission errors, since just a single loss ruins the whole code.**
+**The benefit of the one-pass procedure is that the source can be encoded in real time, though it becomes more sensitive to transmission errors since just a single loss ruins the whole code.**
 
 
 
 #### Q. 2
 
-Assume that **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)** is used to code an information source $S$with a vocabulary of four letters (a, b, c, d) . Before any transmission, the initial coding is *a - 00; b - 01; c - 10; d - 11* . As in the example illustrated in Figure, an **Adaptive Huffman Tree** is built after sending letters "*aabb*" . After that, the additional bitstream received by the decoder for the next few letters is *01010010101*. What's the additional letters received?
+Assume that **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_Huffman_coding)** is used to code an information source $S$with a vocabulary of four letters (a, b, c, d). Before any transmission, the initial coding is *a - 00; b - 01; c - 10; d - 11* . As in the example illustrated in Figure, a **Adaptive Huffman Tree** is built after sending letters "*aabb*". After that, the additional bitstream received by the decoder for the next few letters is *01010010101*. What are the additional letters received?
 
 ![](https://ws2.sinaimg.cn/large/006tNbRwgy1fwx85n8q5hj31as0qgabd.jpg)
 
-**The received letters are *b - a - c - c*, respectively, the routine table is: **
+**The received letters are *b - a - c - c*, respectively, the table is: **
 
 | Code        | 01    | 01    | 00      | 10    | 101   |
 | ----------- | ----- | ----- | ------- | ----- | ----- |
 | **Symbols** | **b** | **a** | **NEW** | **c** | **c** |
 
-**The Adaptive Huffman Trees after each of the additional letters are listed as following:** 
+**The Adaptive Huffman Trees after the additional letters are listed as following:** 
 
 ![](https://ws3.sinaimg.cn/large/006tNbRwgy1fwx99j8zlqj31kw18w10e.jpg)
 
@@ -107,17 +107,17 @@ Assume that **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_H
 
 **Lossless image representation formats:**
 
-- [**BMP**](https://en.wikipedia.org/wiki/Bmp) (bitmap) is a bitmapped graphics format used internally by the [Microsoft Windows graphics subsystem](https://en.wikipedia.org/wiki/GDI) ([GDI](https://en.wikipedia.org/wiki/GDI)), and used commonly as a simple graphics file format on that platform. It is an uncompressed format.
+- [**BMP**](https://en.wikipedia.org/wiki/Bmp) (bitmap) is a bitmapped graphics format used internally by the [Microsoft Windows graphics subsystem](https://en.wikipedia.org/wiki/GDI) ([GDI](https://en.wikipedia.org/wiki/GDI)) and used commonly as a simple graphics file format on that platform. It is an uncompressed format.
 - [**PNG**](https://en.wikipedia.org/wiki/Png) (Portable Network Graphics) (1996) is a bitmap image format that employs lossless data compression. [**PNG**](https://en.wikipedia.org/wiki/Png) was created to both improve upon and replace the [**GIF**](https://en.wikipedia.org/wiki/Gif) format with an image file format that does not require a patent license to use. It uses the [DEFLATE compression algorithm](https://en.wikipedia.org/wiki/DEFLATE_compression_algorithm), that uses a combination of the **LZ77 algorithm** and Huffman coding.
 - [**TIFF**](https://en.wikipedia.org/wiki/Tiff) (Tagged Image File Format) (last review 1992) is a file format for mainly storing images, including photographs and line art. It is one of the most popular and flexible of the current public domain raster file formats. Originally created by the company Aldus, jointly with Microsoft, for use with PostScript printing, **[TIFF](https://en.wikipedia.org/wiki/Tiff)** is a popular format for high color depth images, along with [**JPEG**](https://en.wikipedia.org/wiki/JPEG) and [**PNG**](https://en.wikipedia.org/wiki/Png). [**TIFF**](https://en.wikipedia.org/wiki/Tiff) format is widely supported by image-manipulation applications, and by scanning, faxing, word processing, optical character recognition, and other applications. 
-- [**GIF**](https://en.wikipedia.org/wiki/Gif) images are compressed using the [Lempel–Ziv–Welch](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) (LZW) [lossless data compression](https://en.wikipedia.org/wiki/Lossless_data_compression) technique to reduce the file size without degrading the visual quality. [**GIF**](https://en.wikipedia.org/wiki/Gif) are suitable for sharp-edged line art (such as logos) with a limited number of colors. This takes advantage of the format's lossless compression, which favors flat areas of uniform color with well defined edges.
+- [**GIF**](https://en.wikipedia.org/wiki/Gif) images are compressed using the [Lempel–Ziv–Welch](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) (LZW) [lossless data compression](https://en.wikipedia.org/wiki/Lossless_data_compression) technique to reduce the file size without degrading the visual quality. [**GIF**](https://en.wikipedia.org/wiki/Gif) are suitable for sharp-edged line art (such as logos) with a limited number of colors. This takes advantage of the format's lossless compression, which favors flat areas of uniform color with well-defined edges.
 
 **Lossy image compression formats:**
 
-- [**JPEG**](https://en.wikipedia.org/wiki/JPEG) (Joint Photographic Experts Group) (1992) is an algorithm designed to compress images with 24 bits depth or greyscale images. It is a lossy compression algorithm. One of the characteristics that make the algorithm very flexible is that the compression rate can be adjusted. If we compress a lot, more information will be lost, but the result image size will be smaller. With a smaller compression rate we obtain a better quality, but the size of the resulting image will be bigger. This compression consists in making the coefficients in the quantization matrix bigger when we want more compression, and smaller when we want less compression. 
-- [**JPEG 2000**](https://en.wikipedia.org/wiki/JPEG_2000) (Joint Photographic Experts Group 2000) is a wavelet-based image compression standard. It was created by the Joint Photographic Experts Group committee with the intention of superseding their original discrete cosine transformbased [**JPEG**](https://en.wikipedia.org/wiki/JPEG) standard. 
+- [**JPEG**](https://en.wikipedia.org/wiki/JPEG) (Joint Photographic Experts Group) (1992) is an algorithm designed to compress images with 24 bits depth or greyscale images. It is a lossy compression algorithm. One of the characteristics that make the algorithm very flexible is that the compression rate can be adjusted. If we compress a lot, more information will be lost, but the result image size will be smaller. With a smaller compression rate, we obtain a better quality, but the size of the resulting image will be bigger. This compression consists of making the coefficients in the quantization matrix bigger when we want more compression, and smaller when we want less compression. 
+- [**JPEG 2000**](https://en.wikipedia.org/wiki/JPEG_2000) (Joint Photographic Experts Group 2000) is a wavelet-based image compression standard. It was created by the Joint Photographic Experts Group committee with the intention of superseding their original discrete cosine transform-based [**JPEG**](https://en.wikipedia.org/wiki/JPEG) standard. 
 
-**Comparason of different image formats:**
+**Comparison of different image formats:**
 
 - [**JPEG**](https://en.wikipedia.org/wiki/JPEG) has a big compressing ration, reducing the quality of the image, it is ideal for big images and photographs.
 - [**PNG**](https://en.wikipedia.org/wiki/Png) is a lossless compression algorithm, very good for images with big areas of one unique color, or with small variations of color.
@@ -141,7 +141,7 @@ Assume that **[Adaptive Huffman Coding](https://en.wikipedia.org/wiki/Adaptive_H
 
 **Methods for lossy compression:**
 
-- Reducing the **[color space](https://en.wikipedia.org/wiki/Color_space_encoding)** to the most common colors in the image. The selected colors are specified in the colour [palette](https://en.wikipedia.org/wiki/Palette_(computing)) in the header of the compressed image. Each pixel just references the index of a color in the color palette, this method can be combined with [dithering](https://en.wikipedia.org/wiki/Dithering) to avoid [posterization](https://en.wikipedia.org/wiki/Posterization).
+- Reducing the **[color space](https://en.wikipedia.org/wiki/Color_space_encoding)** to the most common colors in the image. The selected colors are specified in the color [palette](https://en.wikipedia.org/wiki/Palette_(computing)) in the header of the compressed image. Each pixel just references the index of a color in the color palette, this method can be combined with [dithering](https://en.wikipedia.org/wiki/Dithering) to avoid [posterization](https://en.wikipedia.org/wiki/Posterization).
 - **[Chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling).** This takes advantage of the fact that the human eye perceives spatial changes of brightness more sharply than those of color, by averaging or dropping some of the chrominance information in the image.
 - **[Transform coding](https://en.wikipedia.org/wiki/Transform_coding).** This is the most commonly used method. In particular, a [Fourier-related transform](https://en.wikipedia.org/wiki/List_of_Fourier-related_transforms) such as the Discrete Cosine Transform (DCT) is widely used: [N. Ahmed](https://en.wikipedia.org/wiki/N._Ahmed), T. Natarajan and K.R.Rao, "[Discrete Cosine Transform](http://dasan.sejong.ac.kr/~dihan/dip/p5_DCT.pdf)," *IEEE Trans. Computers*, 90–93, Jan. 1974. The DCT is sometimes referred to as "DCT-II" in the context of a family of discrete cosine transforms; e.g., see [discrete cosine transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform). The more recently developed [wavelet transform](https://en.wikipedia.org/wiki/Wavelet_transform) is also used extensively, followed by [quantization](https://en.wikipedia.org/wiki/Quantization_(image_processing)) and [entropy coding](https://en.wikipedia.org/wiki/Entropy_coding).
 - **[Fractal compression](https://en.wikipedia.org/wiki/Fractal_compression).**
@@ -159,7 +159,7 @@ Given a computer cartoon picture and a photograph as follows:
 
 ![](https://ws1.sinaimg.cn/large/006tNbRwgy1fwy50jjc7sj30sg0iywj0.jpg)
 
-[**GIF**](https://en.wikipedia.org/wiki/Gif)s are suitable for **sharp-edged line art** (such as logos) with a limited number of colors. Taking advantage of the format's lossless compression, which favors flat areas of uniform color with well defined edges, **it's intuitive to choose [GIF](https://en.wikipedia.org/wiki/Gif) as a better choice for cartoon picture and [JPEG](https://en.wikipedia.org/wiki/JPEG) for photograph.**
+[**GIF**](https://en.wikipedia.org/wiki/Gif)s are suitable for **sharp-edged line art** (such as logos) with a limited number of colors. Taking advantage of the format's lossless compression, which favors flat areas of uniform color with well-defined edges, **it's intuitive to choose [GIF](https://en.wikipedia.org/wiki/Gif) as a better choice for cartoon picture and [JPEG](https://en.wikipedia.org/wiki/JPEG) for the photograph.**
 
 
 
@@ -167,7 +167,7 @@ Given a computer cartoon picture and a photograph as follows:
 
 
 
-In this part, I implement a simple JPEG compression algorithm including `Color Conversion`, `Chroma Subsampling`, `2-D DCT transform`, `DPCM` , `Run Length Encoding` and `Entropy Coding` refered [this column](https://blog.csdn.net/w394221268/article/category/6371090).
+In this part, I implement a simple JPEG compression algorithm including `Color Conversion`, `Chroma Subsampling`, `2-D DCT transform`, `DPCM`, `Run Length Encoding` and `Entropy Coding` referred [this column](https://blog.csdn.net/w394221268/article/category/6371090).
 
 
 
@@ -175,7 +175,7 @@ In this part, I implement a simple JPEG compression algorithm including `Color C
 
 "Color space", refers to the mathematical model of the expression of color, such as our common "RGB" model, is decomposed into red, green and blue color into three components, such a picture can be broken down into three grayscale, mathematical expression, the design of each of the 8 by 8, 8 by 8 can be expressed by the three matrix, the range of the average between the [0, 255]. 
 
-Different color models have different application scenarios, such as RGB model suitable for spontaneous light design, such as display in the printing industry, the use of ink printing, the color of the pattern was produced by when the reflected light, often using CMYK model, in the JPEG compression algorithm, the need to transform the pattern become YCbCr model, the Luminance, Luminance Y said here, Cb and Cr, respectively, said green and red "color difference value".
+Different color models have different application scenarios, such as the RGB model suitable for spontaneous light design, such as display in the printing industry, the use of ink printing, the color of the pattern was produced by when the reflected light, often using the CMYK model, in the JPEG compression algorithm, the need to transform the pattern become YCbCr model, the Luminance, Luminance Y said here, Cb and Cr, respectively, said green and red "color difference value".
 
 RGB 2 YCC conversion is shown as following,
 
@@ -199,7 +199,7 @@ template<class T> static void RGB_to_YCC(image &img, int y, const T *src)
 
 Chroma subsampling is the practice of encoding images by implementing less resolution for chroma information than for luma information, taking advantage of the human visual system's lower acuity for color differences than for luminance.
 
-In human vision there are three channels for color detection, and for many color systems, three "channels" is sufficient for representing most colors. But there are other ways to represent the color. In many video systems, the three channels are luminance and two chroma channels. In video. The chroma can influence the luma specifically at the pixels where the subsampling put no chroma. Interpolation may then put chroma values there which are incompatible with the luma value there, and further post-processing of that Y'CbCr into R'G'B' for that pixel is what ultimately produces false luminance upon display
+In human vision, there are three channels for color detection, and for many color systems, three "channels" is sufficient for representing most colors. But there are other ways to represent the color. In many video systems, the three channels are luminance and two chroma channels. In video. The chroma can influence the luma specifically at the pixels where the subsampling put no chroma. Interpolation may then put chroma values there which are incompatible with the luma value there, and further post-processing of that Y'CbCr into R'G'B' for that pixel is what ultimately produces false luminance upon display
 
 The subsampling processes are shown as follows:
 
@@ -234,7 +234,7 @@ The discrete cosine transform (DCT) helps separate the image into parts (or spec
 
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fx3y02axq8j31kw12kk07.jpg)
 
-[Look here for more infomation of my reference.](https://users.cs.cf.ac.uk/Dave.Marshall/Multimedia/node231.html) 
+[Look here for more information about my reference.](https://users.cs.cf.ac.uk/Dave.Marshall/Multimedia/node231.html) 
 
 ```cpp
 static void dct(dct_t *data)
@@ -333,7 +333,7 @@ static void dct(dct_t *data)
 
 Differential pulse-code modulation is a signal encoder that uses the baseline of PCM but adds some functionalities based on the prediction of the samples of the signal.
 
-If the input is a continuous-time analog signal, it needs to be sampled first so that a discrete-time signal is the input to the DPCM encoder.
+If the input is a continuous-time analog signal, it needs to be sampled first so that a discrete-time signal is an input to the DPCM encoder.
 
 - Option 1: take the values of two consecutive samples; if they are analog samples, quantize them; calculate the difference between the first one and the next; the output is the difference, and it can be further entropy coded.
 - Option 2: instead of taking a difference relative to a previous input sample, take the difference relative to the output of a local model of the decoder process; in this option, the difference can be quantized, which allows a good way to incorporate a controlled loss in the encoding.
@@ -612,4 +612,4 @@ Our JPEG:
 
 
 
-All of this demonstrates the effectiveness of our Ex.
+**All of this demonstrates the effectiveness of our Ex.**
