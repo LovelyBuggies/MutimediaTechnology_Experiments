@@ -1,11 +1,11 @@
 # Experiments Report
 
 
-## Video Transaction
+## Video Transition
 
 ### Question Description
 
-In this experiment, we are supposed to complete a video transaction. Specifically, the second video appears to under the first video through an opening circle, like a camera iris opening. Implementation effect acts as the figure below.
+In this experiment, we are supposed to complete a video transition. Specifically, the second video appears to under the first video through an opening circle, like a camera iris opening. Implementation effect acts as the figure below.
 
 ![](https://i.postimg.cc/SQHkxjXZ/Snip20181008_43.png)
 
