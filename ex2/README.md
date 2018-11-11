@@ -167,7 +167,7 @@ Given a computer cartoon picture and a photograph as follows:
 
 
 
-In this part, I implement a simple JPEG compression algorithm including `Color Conversion`, `Chroma Subsampling`, `2-D DCT transform`, `DPCM` , `Run Length Encoding` and `Entropy Coding`.
+In this part, I implement a simple JPEG compression algorithm including `Color Conversion`, `Chroma Subsampling`, `2-D DCT transform`, `DPCM` , `Run Length Encoding` and `Entropy Coding` refered [this column](https://blog.csdn.net/w394221268/article/category/6371090).
 
 
 
