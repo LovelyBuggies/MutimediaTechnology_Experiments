@@ -5,7 +5,7 @@
 
 ### Question Description
 
-In this experiment, we are supposed to complete a video transaction. Specifically, the second video appears to under the first video through an opening circle, like a camera iris opening. Implementation effect acts as figure below.
+In this experiment, we are supposed to complete a video transaction. Specifically, the second video appears to under the first video through an opening circle, like a camera iris opening. Implementation effect acts as the figure below.
 
 ![](https://i.postimg.cc/SQHkxjXZ/Snip20181008_43.png)
 
@@ -21,11 +21,11 @@ In order to achieve the "camera iris" effect, there are three possible methods:
 
 #### Language and Environment
 
-We facilitate [Pycharm IDE](https://www.jetbrains.com/pycharm/) to conduct our experiment.Why pyCharm? The most inviting advantage of [Pycharm IDE](https://www.jetbrains.com/pycharm/) is that it is an integrated IDE for [Python](https://en.wikipedia.org/wiki/Python_(programming_language)). We are able to fluently code in [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) with the help of it.
+We facilitate [Pycharm IDE](https://www.jetbrains.com/pycharm/) to conduct our experiment. Why pyCharm? The most inviting advantage of [Pycharm IDE](https://www.jetbrains.com/pycharm/) is that it is an integrated IDE for [Python](https://en.wikipedia.org/wiki/Python_(programming_language)). We are able to fluently code in [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) with the help of it.
 
-More over, combined with [anaconda](https://www.anaconda.com/), we can get any package we want. *Actually, I first tried to used openCV API to solve this question, but it's turnout to be a dead end.* [Anaconda](https://www.anaconda.com/) -- Easily install 1,400+ data science packages for Python/R and manage your packages, dependencies, and environments—all with the single click of a button. Free and open source.
+Moreover, combined with [anaconda](https://www.anaconda.com/), we can get any package we want. *Actually, I first tried to used openCV API to solve this question, but it's turn out to be a dead end.* [Anaconda](https://www.anaconda.com/) -- Easily install 1,400+ data science packages for Python/R and manage your packages, dependencies, and environments—all with the single click of a button. Free and open source.
 
-Here's my [anaconda](https://www.anaconda.com/) environment. As you can see, many package are listed in my env named "Video".
+Here's my [Anaconda](https://www.anaconda.com/) environment. As you can see, many packages are listed in my env named "Video".
 
 ![](https://i.postimg.cc/gkRdXd8G/Snip20181008_42.png)
 
@@ -35,7 +35,7 @@ And the correspondences in [Pycharm IDE](https://www.jetbrains.com/pycharm/).
 
 #### I/O Implementation
 
-Considering that we could acquire each frame, the video imagine, and we are given the *videos* in *.jpg format, we prefer to deal with the imagines rather than the true videos for simplicity. It isn't huge work to apply this code to videos, if really neccessary. 
+Considering that we could acquire each frame, the video imagine, and we are given the *videos* in *.jpg format, we prefer to deal with the imagines rather than the true videos for simplicity. It isn't huge work to apply this code to videos, if really necessary. 
 
 As for output, the pictures are saved using *.png formatted. Because we can open *.png image without difficulties in [Pycharm IDE](https://www.jetbrains.com/pycharm/).
 
@@ -54,7 +54,7 @@ radius = int(height2/4);
 
 #### Algorithm Design
 
-In this experiment, we have tried many state-of-art ways, such as openCV. But unfortunately, as far as we are concerned, none of them show great performance in this context. 
+In this experiment, we have tried many state-of-art ways, such as OpenCV. But unfortunately, as far as we are concerned, none of them show great performance in this context. 
 
 By trials and errors, we finally selected [PIL(Python Imaging Library)](https://en.wikipedia.org/wiki/Python_Imaging_Library) as our tool and used naive methods to change pixels' RGB.
 
@@ -62,11 +62,11 @@ By trials and errors, we finally selected [PIL(Python Imaging Library)](https://
 
 ![](https://i.postimg.cc/q7w5hD1J/Snip20181009_44.png)
 
-The figure above gives a brief description about the alogithm.
+The figure above gives a brief description of the algorithm.
 
 1. For layer image, find the rectangle interest region.
-2. For each pixel in interest region, compute the distance to the center.
-3. If the distance is smaller than radius, then the pixel change its pixel value to the corresponding mask image.
+2. For each pixel in the interest region, compute the distance to the center.
+3. If the distance is smaller than the radius, then the pixel change its pixel value to the corresponding mask image.
 
 Core code is listed as following:
 
@@ -88,7 +88,7 @@ Considering the easiest method with some pixel loss, we used the following formu
 newSize/originalSize = newX/originalX
 ```
 
-According to this formula, we finally got the extension of the mask image. Extension is 4/3 larger than the original.
+According to this formula, we finally got the extension of the mask image. The extension is 4/3 larger than the original.
 
 ``` python
 img3 = Image.new("L", img1.size)
@@ -118,7 +118,7 @@ Image.fromarray(npImage2).save('pics/circleExinsertion.png')
 
 #### OpenCV Defects
 
-When referring to image process, [openCV](https://opencv.org/) is always recommended as the first choice. However, we think it's unable to fit into this context. 
+When referring to the image process, [openCV](https://opencv.org/) is always recommended as the first choice. However, we think it's unable to fit into this context. 
 
 Although cv is useful in image and video process, meanwhile, cv almost contains many sophisticated and advanced API, it's astonishing that, *to our best knowledge*, it doesn't include a simple circular image crop function!!! Cv can only crop images in a rectangle size or more complexed way (courier crop). Neither can it drop a circular image on a canvas.
 
@@ -126,7 +126,7 @@ Some classical Q&As in [Stack Overflow](https://stackoverflow.com/questions/3151
 
 That's why we negate the first plan:
 
-**Because I could never successfully crop images in circle, so any efforts to paste were useless.**
+**Because I could never successfully crop images in a circle, so any efforts to paste were useless.**
 
 #### PIL ImageDraw Defects
 
@@ -167,11 +167,11 @@ Image.fromarray(npImage1).save('pics/croppedLena.png')
 Image.fromarray(npImage2).save('pics/croppedNobel.png')
 ```
 
-The image was covered by circle, alluding the dawn of the success, seemingly. No bad, right?
+The image was covered by a circle, alluding the dawn of the success, seemingly. No bad, right?
 
 ![](https://i.postimg.cc/V6NHj9hj/Snip20181009_48.png)
 
-But frustratingly, there exists some difficulties when trying to paste mask. In fact, the layer part **is not transparent** but some interesting RGB scales, so you can not simply paste it to the layer.
+But frustratingly, there exist some difficulties when trying to paste mask. In fact, the layer part **is not transparent** but some interesting RGB scales, so you can not simply paste it to the layer.
 
 That's why we negate the second plan:
 
@@ -195,7 +195,7 @@ View code on my [repo](https://github.com/LovelyBuggies/MultimediaTechnology_Exp
 
 ![](https://i.postimg.cc/FzdW6rNz/Snip20181009_49.png)
 
-These pictures indicate the success of camera iris experiment!
+These pictures indicate the success of the camera iris experiment!
 
 ## LUT Problem
 
@@ -211,7 +211,7 @@ For the [Color LUT(Lookup Table) problem](https://en.wikipedia.org/wiki/Lookup_t
 
 ### Experiment Procedure
 
-There are two possible way to make images fuzzy:
+There is two possible way to make images fuzzy:
 
 - Use [OcTree](https://en.wikipedia.org/wiki/Octree) technique.
 - Cut color scales into pieces.
@@ -224,16 +224,16 @@ We also used [Pycharm IDE](https://www.jetbrains.com/pycharm/) as our tool and [
 
 This part contains screen-shot of [video on Youtube](https://www.youtube.com/watch?v=LQST9MITKrw).
 
-We can convert an image to a numpy array. The the image can be represented by points in RGB 3-D space. So we can geographically spilt the points into many groups and put the points into buckets. 
+We can convert an image to a numpy array. The image can be represented by points in RGB 3-D space. So we can geographically spill the points into many groups and put the points into buckets. 
 
 ![](https://i.postimg.cc/yN1bPHHG/buckets.gif)
 
-Each bucket has a fixed RGB. The image will become less clear for pixels' RGBs are less more accurate. 
+Each bucket has a fixed RGB. The image will become less clear for pixels' RGB are less more accurate. 
 
 
 **Fuzzy Procedure**
 
-It's intuitive to use ```np.floor()``` methods to approximate the float digits generated by pixel division.
+It's intuitive to use ```np.floor()``` methods to approximate the float digits generated by the pixel division.
 
 The core code:
 
