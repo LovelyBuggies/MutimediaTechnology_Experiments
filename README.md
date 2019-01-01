@@ -2,7 +2,7 @@
 
 > **Class homework** for junior students of SDCS, SYSU. 
 > 
-> **Numerical Computation** Class by Meng Yang, SDCS, SYSU. 
+> **Multimedia Technology** Class by Meng Yang, SDCS, SYSU. 
 > 
 > **Author** Nino Lau.
 
