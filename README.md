@@ -1,6 +1,6 @@
 # MultimediaTechnology_Experiments
 
-> **Class design** for junior students of SDCS, SYSU. 
+> **Class homework** for junior students of SDCS, SYSU. 
 > 
 > **Numerical Computation** Class by Meng Yang, SDCS, SYSU. 
 > 
